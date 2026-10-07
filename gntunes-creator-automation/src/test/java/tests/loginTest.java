@@ -11,6 +11,6 @@ public class loginTest extends BaseTest {
         AccountActions2Login ac1 = new AccountActions2Login(driver);
 
         ac1.openPage();
-        ac1.LoginPage();
+        ac1.loginAndVerifyProfileIcon();
     }
 }
