@@ -15,14 +15,14 @@ public class Login {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath= "//*[@id=\"mui-1\"]")
+	@FindBy(xpath= "//*[@id='mui-1']")
 	private WebElement email;
 
 	public WebElement getEmail() {
 		return email;
 	}
 	
-	@FindBy (xpath= "//*[@id=\"mui-2\"]")
+	@FindBy (xpath= "//*[@id='mui-2']")
 	private WebElement password;
 	
 	public WebElement getPass()
@@ -30,7 +30,7 @@ public class Login {
 		return password;
 	}
 	
-	@FindBy (xpath="//*[text()=\"Sign In\"]")
+	@FindBy (xpath="//*[text()= 'Sign In']")
 	private WebElement sign;
 	
 	public WebElement getSignInButton()
@@ -38,5 +38,15 @@ public class Login {
 		return sign;
 		
 	}
+	
+	@FindBy (xpath="//*[text()= 'Logo']")
+	private WebElement logoIcon;
+	
+	public WebElement getLogoIcon()
+	{
+		return logoIcon;
+		
+	}
+	
 
 }
