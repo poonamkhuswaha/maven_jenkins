@@ -1,4 +1,4 @@
-package tests;
+ package tests;
 
 import java.time.Duration;
 
@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
@@ -16,11 +17,13 @@ public class BaseTest {
 
     @Parameters("BROWSER")
     @BeforeClass
-    public void setup(@Optional("chrome") String browser) {
+    public void setup(@Optional("chrome") String browser)
+    {
 
-        System.out.println("Browser parameter received: " + browser);
+    	System.out.println("Browser parameter received: " + browser); 
 
-        switch (browser.toLowerCase()) {
+        switch (browser.toLowerCase())
+    {
 
         case "firefox":
             driver = new FirefoxDriver();
@@ -42,4 +45,11 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         System.out.println("Browser launched: " + browser);
     }
+    
+//    @AfterClass
+//    public void tearDown() {
+//    if (driver != null) {
+//    driver.quit();   // closes all browser windows and ends session
+//        }
+   // }
 }
